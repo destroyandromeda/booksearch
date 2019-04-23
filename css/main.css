@@ -1,0 +1,51 @@
+.spoiler-wrap{background:#fff;margin: 0 0 8px;border:1px solid #efefef}
+.spoiler-head{background:#efefef;cursor:pointer;}
+.spoiler-body{padding:5px}
+.spoiler-wrap.disabled .spoiler-body{display:none}
+.spoiler-wrap.active{border-color:#57AA43}
+.spoiler-wrap.active .spoiler-head{background:#57AA43;color:#fff}
+
+.search{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.allbooks{
+	width: 100%;
+	margin-right: 0;
+	margin-left: 0;
+}
+.book{
+	width: 100%;
+	border: 1px dashed;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+.book-cover{
+	height: 400px!important;
+
+}
+
+.description{
+	width:100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.card{
+	margin: auto;
+
+	border: 0;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 15px;
+
+}
+.card-body{
+	padding-left: 0;
+	padding-right: 0;
+
+
+}
+
+
