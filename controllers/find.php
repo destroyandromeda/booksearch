@@ -44,9 +44,9 @@ Class Controller_Find Extends Controller_Base {
 
         //поиск по данным из формы
         //проверка на наличее данных переданных формой
-        $countAuthor=0;
-        $countGenre=0;
-        $strAuthor = 'WHERE ';
+
+
+
         if (!empty($_GET)) {
             //если есть название, то ищем по нему
             if (!empty($_GET['book_title']))
@@ -66,51 +66,151 @@ Class Controller_Find Extends Controller_Base {
                 $books1 = $model_books->getAllRows(); // получаем все строки
             }
             else {
+                $countAuthor=0;
+                $countGenre=0;
+                $strAuthor = 'WHERE ';
                 for ($i = 0; $i <= count($authors); $i++)
                 {
-                    //проверяем наличее checkbox'ов
                     if (!empty($_GET['author_id-' . $i]))
                     {
-                        //добавляем в выборку данные
                         $countAuthor++;
-                        $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR ';
+
                     }
                 }
-
-
-                if($i>=count($authors) and  $countAuthor>0){
-                    $strAuthor = substr($strAuthor, 0, -3);
-                    $strAuthor .= ' AND ';
-                }
-
-
-                for ($i = 0; $i <= count($genres); $i++)
+                for ($i = 0; $i <= count($authors); $i++)
                 {
-                    //проверяем наличее checkbox'ов
                     if (!empty($_GET['genre_id-' . $i]))
                     {
-                        //добавляем в выборку данные
                         $countGenre++;
-                        $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR ';
                     }
                 }
-                if($countAuthor<1){
-                    $strAuthor = substr($strAuthor, 0, -3);
 
+                if ($countAuthor > 1 and $countGenre > 1){
+                    $strAuthor .= ' ( ';
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['author_id-' . $i]))
+                        {
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR';
+                        }
+                    }
+                    $strAuthor = substr($strAuthor, 0, -3);
+                    $strAuthor .= ' ) AND ( ';
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['genre_id-' . $i]))
+                        {
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR';
+                        }
+
+                    }
+                    $strAuthor = substr($strAuthor, 0, -3);
+                    $strAuthor .= ')';
                 }
-                $strAuthor = substr($strAuthor, 0, -1);//убираем последний OR
-                
                 if($countAuthor == 0 and $countGenre == 0)
                 {
-                    $strAuthor = '';
-                }//если не было chekbox'ов, то убираем из запроса WHERE
 
-                if(($countGenre != 0) and ($countGenre == 0)){
-                    str_replace(' AND ','',$strAuthor);
+                    $strAuthor = '';//если не было chekbox'ов, то убираем из запроса WHERE
+                }
+                if ($countAuthor == 1 and $countGenre == 1){
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['author_id-' . $i]))
+                        {
+                            $strAuthor .= '(';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\') AND ';
+                        }
+                    }
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['genre_id-' . $i]))
+                        {
+                            $strAuthor .= '(';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' ) ';
+                        }
+                    }
+                }
+
+                if ($countAuthor > 1 and $countGenre == 1){
+                    $strAuthor .= ' ( ';
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['author_id-' . $i]))
+                        {
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR';
+                        }
+                    }
+                    $strAuthor = substr($strAuthor, 0, -3);
+                    $strAuthor .= ' ) AND ( ';
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['genre_id-' . $i]))
+                        {
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' ) ';
+                        }
+                    }
+                }
+                if ($countAuthor > 1 and $countGenre == 0){
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['author_id-' . $i]))
+                        {
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR';
+                        }
+                    }
                     $strAuthor = substr($strAuthor, 0, -3);
                 }
-                echo $strAuthor;
-                echo '<br>';
+                if ($countAuthor == 1 and $countGenre == 0){
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['author_id-' . $i]))
+                        {
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\'';
+                        }
+                    }
+                }
+
+                if ($countAuthor == 0  and $countGenre > 1){
+                    for ($i = 0; $i <= count($genres); $i++)
+                    {
+                        if (!empty($_GET['genre_id-' . $i]))
+                        {
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR';
+                        }
+                    }
+                    $strAuthor = substr($strAuthor, 0, -3);
+                }
+                if ($countAuthor == 1 and $countGenre > 1){
+                    $strAuthor .= ' ( ';
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['author_id-' . $i]))
+                        {
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\'';
+                        }
+                    }
+
+                    $strAuthor .= ' ) AND ( ';
+                    for ($i = 0; $i <= count($authors); $i++)
+                    {
+                        if (!empty($_GET['genre_id-' . $i]))
+                        {
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR';
+                        }
+
+                    }
+                    $strAuthor = substr($strAuthor, 0, -3);
+                    $strAuthor .= ')';
+                }
+                if ($countAuthor == 0  and $countGenre == 1){
+                    for ($i = 0; $i <= count($genres); $i++)
+                    {
+                        if (!empty($_GET['genre_id-' . $i]))
+                        {
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\'';
+                        }
+                    }
+                }
 
                 //добавляем в запрос наши параметры
                 $sql = "SELECT 
@@ -124,8 +224,6 @@ Class Controller_Find Extends Controller_Base {
                             LEFT JOIN book_genre ON book_genre.book = books.name 
                             LEFT JOIN authors ON book_author.author = authors.id
                             LEFT JOIN genres ON book_genre.genres = genres.id ".$strAuthor." group by books.id  ";
-                echo $sql;
-
 
                 $model_books = new Model_Books($sql); // создаем объект модели
                 $books1 = $model_books->getAllRows(); // получаем все строки

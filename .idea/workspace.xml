@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a59423c-4fc0-45cb-969e-1ea3e831618b" name="Default Changelist" comment="" />
+    <list default="true" id="6a59423c-4fc0-45cb-969e-1ea3e831618b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/find.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/find.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/find/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="289">
               <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
             </state>
           </provider>
@@ -36,10 +39,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/find.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="100" column="53" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
+            <state relative-caret-position="335">
+              <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
               <folding>
-                <element signature="e#3565#3831#0#PHP" />
+                <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
+                <element signature="e#0#684#0" />
+                <element signature="e#2811#2973#0#PHP" />
+                <element signature="e#3011#3194#0#PHP" />
+                <element signature="e#3267#3437#0#PHP" />
+                <element signature="e#3284#3983#0#PHP" />
+                <element signature="e#4040#4884#0#PHP" />
+                <element signature="e#4901#5388#0#PHP" />
+                <element signature="e#5320#5760#0#PHP" />
+                <element signature="e#6280#6719#0#PHP" />
+                <element signature="e#6739#7682#0#PHP" />
+                <element signature="e#6961#7149#0#PHP" />
+                <element signature="e#8030#8405#0#PHP" />
+                <element signature="e#8095#8389#0#PHP" />
                 <element signature="e#0#654#0" />
               </folding>
             </state>
@@ -69,6 +85,9 @@
       <find>image</find>
       <find>text()</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,12 +131,13 @@
     </option>
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="22" />
     <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -233,18 +253,18 @@
       <workItem from="1555864368264" duration="46000" />
       <workItem from="1555864757118" duration="19494000" />
       <workItem from="1555941919760" duration="37031000" />
-      <workItem from="1556015303171" duration="501000" />
+      <workItem from="1556015303171" duration="4520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104118000" />
+    <option name="totallyTimeSpent" value="108137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -262,7 +282,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16717096" />
@@ -566,7 +586,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/find/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="289">
           <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
         </state>
       </provider>
@@ -580,10 +600,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/find.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="100" column="53" selection-start-line="100" selection-start-column="53" selection-end-line="100" selection-end-column="53" />
+        <state relative-caret-position="335">
+          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
           <folding>
-            <element signature="e#3565#3831#0#PHP" />
+            <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
+            <element signature="e#0#684#0" />
+            <element signature="e#2811#2973#0#PHP" />
+            <element signature="e#3011#3194#0#PHP" />
+            <element signature="e#3267#3437#0#PHP" />
+            <element signature="e#3284#3983#0#PHP" />
+            <element signature="e#4040#4884#0#PHP" />
+            <element signature="e#4901#5388#0#PHP" />
+            <element signature="e#5320#5760#0#PHP" />
+            <element signature="e#6280#6719#0#PHP" />
+            <element signature="e#6739#7682#0#PHP" />
+            <element signature="e#6961#7149#0#PHP" />
+            <element signature="e#8030#8405#0#PHP" />
+            <element signature="e#8095#8389#0#PHP" />
             <element signature="e#0#654#0" />
           </folding>
         </state>
