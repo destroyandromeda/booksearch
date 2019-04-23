@@ -2,7 +2,7 @@
         <div class="row">
             <div class="findByTitleBook col-12 col-md-12">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="book_title" value='<?php if(!empty($_GET)){echo $_GET['book_title'];}else{echo'';}?>'  placeholder = 'Введите название книги' >
+                    <input type="text" class="form-control ajax_q" name="book_title" value='<?php if(!empty($_GET)){echo $_GET['book_title'];}else{echo'';}?>'  placeholder = 'Введите название книги' >
                 </div>
             </div>
             <div class="findByGenres col-12 col-md-4">
@@ -47,11 +47,28 @@
         </div>
  </form>
 
+ <script>
+
+     document.ready(function () {
+
+         $.ajax({
+
+             type: "GET",
+             data: {
+                 book_title:  $('.ajax_q').val(),
+
+             }
+
+
+         })
+     })
+ </script>
+
  <div class="allbooks">
      <div class="row">
          <?php if(!empty($books1)):?>
              <?php foreach($books1 as $book): ?>
-                 <div class="card" style="width: 16rem">
+                 <div class="card" style="width: 14rem">
                      <img class="book-cover" src="https://www.litmir.me<?=$book['cover']?>" alt="<?=$book['cover']?>">
                      <div class="card-body">
                          <div class="spoiler-wrap disabled">

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a59423c-4fc0-45cb-969e-1ea3e831618b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/find.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/find.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/find/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/find/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,22 +33,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/find/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state>
+              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/find.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
+            <state relative-caret-position="161">
+              <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
               <folding>
                 <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
                 <element signature="e#0#684#0" />
                 <element signature="e#2811#2973#0#PHP" />
                 <element signature="e#3011#3194#0#PHP" />
+                <element signature="e#3266#4209#0#PHP" />
                 <element signature="e#3267#3437#0#PHP" />
                 <element signature="e#3284#3983#0#PHP" />
                 <element signature="e#4040#4884#0#PHP" />
@@ -58,6 +67,34 @@
                 <element signature="e#8095#8389#0#PHP" />
                 <element signature="e#0#654#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/parser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-158">
+              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+              <folding>
+                <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Parser#0;n#!!top" />
+                <element signature="e#1236#2142#0#PHP" />
+                <element signature="e#2192#2437#0#PHP" />
+                <element signature="e#2954#3285#0#PHP" />
+                <element signature="e#3371#3578#0#PHP" />
+                <element signature="e#3668#3890#0#PHP" />
+                <element signature="e#3937#4787#0#PHP" />
+                <element signature="e#4833#5680#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -122,10 +159,11 @@
         <option value="$PROJECT_DIR$/classes/model_base.php" />
         <option value="$PROJECT_DIR$/controllers/searchbook.php" />
         <option value="$PROJECT_DIR$/views/layouts/first_layouts.php" />
-        <option value="$PROJECT_DIR$/views/find/index.php" />
-        <option value="$PROJECT_DIR$/controllers/parser.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/views/parser/index.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/views/find/index.php" />
+        <option value="$PROJECT_DIR$/controllers/parser.php" />
         <option value="$PROJECT_DIR$/controllers/find.php" />
       </list>
     </option>
@@ -253,18 +291,18 @@
       <workItem from="1555864368264" duration="46000" />
       <workItem from="1555864757118" duration="19494000" />
       <workItem from="1555941919760" duration="37031000" />
-      <workItem from="1556015303171" duration="4520000" />
+      <workItem from="1556015303171" duration="7268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108137000" />
+    <option name="totallyTimeSpent" value="110885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -544,25 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/parser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="140" column="39" selection-start-line="140" selection-start-column="39" selection-end-line="140" selection-end-column="39" />
-          <folding>
-            <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Parser#0;n#!!top" />
-            <element signature="n#deliteTables#0;n#!!block;n#index#0;n#Controller_Parser#0;n#!!top" />
-            <element signature="e#1360#2206#0#PHP" />
-            <element signature="e#2248#2481#0#PHP" />
-            <element signature="e#2576#2907#0#PHP" />
-            <element signature="e#2942#3245#0#PHP" />
-            <element signature="e#3319#3506#0#PHP" />
-            <element signature="e#3584#3786#0#PHP" />
-            <element signature="e#3825#4619#0#PHP" />
-            <element signature="e#4657#5444#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/first_layouts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -584,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/find/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -600,13 +612,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/find.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
+        <state relative-caret-position="161">
+          <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
           <folding>
             <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
             <element signature="e#0#684#0" />
             <element signature="e#2811#2973#0#PHP" />
             <element signature="e#3011#3194#0#PHP" />
+            <element signature="e#3266#4209#0#PHP" />
             <element signature="e#3267#3437#0#PHP" />
             <element signature="e#3284#3983#0#PHP" />
             <element signature="e#4040#4884#0#PHP" />
@@ -619,6 +632,42 @@
             <element signature="e#8095#8389#0#PHP" />
             <element signature="e#0#654#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/find/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/parser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+          <folding>
+            <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Parser#0;n#!!top" />
+            <element signature="e#1236#2142#0#PHP" />
+            <element signature="e#2192#2437#0#PHP" />
+            <element signature="e#2954#3285#0#PHP" />
+            <element signature="e#3371#3578#0#PHP" />
+            <element signature="e#3668#3890#0#PHP" />
+            <element signature="e#3937#4787#0#PHP" />
+            <element signature="e#4833#5680#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>

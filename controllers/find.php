@@ -107,6 +107,7 @@ Class Controller_Find Extends Controller_Base {
                     $strAuthor = substr($strAuthor, 0, -3);
                     $strAuthor .= ')';
                 }
+
                 if($countAuthor == 0 and $countGenre == 0)
                 {
 
@@ -170,7 +171,7 @@ Class Controller_Find Extends Controller_Base {
                     }
                 }
 
-                if ($countAuthor == 0  and $countGenre > 1){
+                if ($countAuthor == 0 and $countGenre > 1){
                     for ($i = 0; $i <= count($genres); $i++)
                     {
                         if (!empty($_GET['genre_id-' . $i]))
@@ -202,7 +203,7 @@ Class Controller_Find Extends Controller_Base {
                     $strAuthor = substr($strAuthor, 0, -3);
                     $strAuthor .= ')';
                 }
-                if ($countAuthor == 0  and $countGenre == 1){
+                if ($countAuthor == 0 and $countGenre == 1){
                     for ($i = 0; $i <= count($genres); $i++)
                     {
                         if (!empty($_GET['genre_id-' . $i]))
@@ -227,9 +228,6 @@ Class Controller_Find Extends Controller_Base {
 
                 $model_books = new Model_Books($sql); // создаем объект модели
                 $books1 = $model_books->getAllRows(); // получаем все строки
-
-
-
             }
 
             //отправка данных

@@ -134,9 +134,6 @@ Class Controller_Parser Extends Controller_Base {
             }
             //отправка данных
             $this->template->vars('data', $data);
-
-        }else{
-
         }
         $this->template->view('index');
 
