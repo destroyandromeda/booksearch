@@ -68,7 +68,7 @@
          <?php if(!empty($books1)):?>
              <?php foreach($books1 as $book): ?>
                  <div class="card" style="width: 14rem">
-                     <img class="book-cover" src="https://www.litmir.me<?=$book['cover']?>" alt="<?=$book['cover']?>">
+                     <img class="book-cover" src="<?=$book['cover']?>" alt="<?=$book['name']?>">
                      <div class="card-body">
                          <div class="spoiler-wrap disabled">
                              <div class="spoiler-head">Подробнее</div>

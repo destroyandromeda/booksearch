@@ -36,9 +36,14 @@ Class Controller_Parser Extends Controller_Base {
 
         if(isset($_GET['parse']))
         {
+            if(isset($_GET['pages'])){
+                $pages = $_GET['pages'];
+            }else{
+                $pages = 1;
+            }
             delTables();
             //парсинг по страницам, $i - номерс страницы,6 и более очень долго
-            for ($i = 1; $i <= 10; $i++){
+            for ($i = 1; $i <= $pages; $i++){
                 // 1. инициализация
                 $ch = curl_init();
                 $uagent = "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.14";
@@ -94,7 +99,13 @@ Class Controller_Parser Extends Controller_Base {
                 $book->id = $i;
                 $book->name = $data[$i-1]['name'];
                 $book->description =  $data[$i-1]['description'];
-                $book->cover =  $data[$i-1]['image'];
+                if(!empty($data[$i-1]['image'])){
+                    $img = 'https://www.litmir.me'.$data[$i-1]['image'];
+                }
+                else{
+                    $img = 'https://ovendom.ru/feedback/images/t_1492424766.jpg';
+                }
+                $book->cover =  $img;
                 $book->save();
             }
             //сохраняем жанры
