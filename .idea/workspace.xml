@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a59423c-4fc0-45cb-969e-1ea3e831618b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6a59423c-4fc0-45cb-969e-1ea3e831618b" name="Default Changelist" comment="На данный момент работает, ajax'а нет">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/find.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/find.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/searchbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/searchbook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/model_find.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_find.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/find/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/find/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,10 +34,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/find/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+            <state relative-caret-position="17">
+              <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
               <folding>
+                <element signature="n#div#0;n#div#0;n#form#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#form#0;n#!!top" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#form#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#form#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -45,26 +50,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" selection-end-line="3" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/find.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
+            <state relative-caret-position="34">
+              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
               <folding>
                 <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
-                <element signature="e#0#684#0" />
-                <element signature="e#2811#2973#0#PHP" />
-                <element signature="e#3011#3194#0#PHP" />
-                <element signature="e#3266#4209#0#PHP" />
-                <element signature="e#3267#3437#0#PHP" />
-                <element signature="e#3284#3983#0#PHP" />
-                <element signature="e#4040#4884#0#PHP" />
-                <element signature="e#4901#5388#0#PHP" />
-                <element signature="e#5320#5760#0#PHP" />
-                <element signature="e#6280#6719#0#PHP" />
-                <element signature="e#6739#7682#0#PHP" />
-                <element signature="e#6961#7149#0#PHP" />
-                <element signature="e#8030#8405#0#PHP" />
-                <element signature="e#8095#8389#0#PHP" />
                 <element signature="e#0#654#0" />
               </folding>
             </state>
@@ -74,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/parser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-158">
-              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+            <state relative-caret-position="216">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
                 <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Parser#0;n#!!top" />
                 <element signature="e#1236#2142#0#PHP" />
@@ -90,11 +90,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/searchbook.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#0#389#2" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/models/model_find.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="69" column="63" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -121,6 +142,9 @@
     <findStrings>
       <find>image</find>
       <find>text()</find>
+      <find>author_id</find>
+      <find>genre_id</find>
+      <find>genre_id-</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,7 +167,6 @@
         <option value="$PROJECT_DIR$/views/genres/genres.php" />
         <option value="$PROJECT_DIR$/models/model_authors.php" />
         <option value="$PROJECT_DIR$/models/model_book_authors.php" />
-        <option value="$PROJECT_DIR$/classes/router.php" />
         <option value="$PROJECT_DIR$/models/model_parser.php" />
         <option value="$PROJECT_DIR$/controllers/paser.php" />
         <option value="$PROJECT_DIR$/views/searchbook/index.php" />
@@ -152,19 +175,20 @@
         <option value="$PROJECT_DIR$/views/genres/index.php" />
         <option value="$PROJECT_DIR$/views/authors/index.php" />
         <option value="$PROJECT_DIR$/views/books/index.php" />
-        <option value="$PROJECT_DIR$/models/model_find.php" />
         <option value="$PROJECT_DIR$/views/find/find.php" />
         <option value="$PROJECT_DIR$/views/index/index.php" />
         <option value="$PROJECT_DIR$/controllers/books.php" />
         <option value="$PROJECT_DIR$/classes/model_base.php" />
-        <option value="$PROJECT_DIR$/controllers/searchbook.php" />
         <option value="$PROJECT_DIR$/views/layouts/first_layouts.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/views/parser/index.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/views/find/index.php" />
         <option value="$PROJECT_DIR$/controllers/parser.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controllers/find.php" />
+        <option value="$PROJECT_DIR$/classes/router.php" />
+        <option value="$PROJECT_DIR$/controllers/searchbook.php" />
+        <option value="$PROJECT_DIR$/views/find/index.php" />
+        <option value="$PROJECT_DIR$/models/model_find.php" />
       </list>
     </option>
   </component>
@@ -188,26 +212,6 @@
             <path>
               <item name="mvc" type="b2602c69:ProjectViewProjectNode" />
               <item name="mvc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mvc" type="b2602c69:ProjectViewProjectNode" />
@@ -291,20 +295,21 @@
       <workItem from="1555864368264" duration="46000" />
       <workItem from="1555864757118" duration="19494000" />
       <workItem from="1555941919760" duration="37031000" />
-      <workItem from="1556015303171" duration="7268000" />
+      <workItem from="1556015303171" duration="18300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110885000" />
+    <option name="totallyTimeSpent" value="121917000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -346,6 +351,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="На данный момент работает, ajax'а нет" />
+    <option name="LAST_COMMIT_MESSAGE" value="На данный момент работает, ajax'а нет" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -417,16 +426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
-          <folding>
-            <element signature="n#setPath#0;n#Router#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -556,20 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/model_find.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/searchbook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/parser/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -610,47 +595,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/find.php">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="132" column="17" lean-forward="true" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="17" />
-          <folding>
-            <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
-            <element signature="e#0#684#0" />
-            <element signature="e#2811#2973#0#PHP" />
-            <element signature="e#3011#3194#0#PHP" />
-            <element signature="e#3266#4209#0#PHP" />
-            <element signature="e#3267#3437#0#PHP" />
-            <element signature="e#3284#3983#0#PHP" />
-            <element signature="e#4040#4884#0#PHP" />
-            <element signature="e#4901#5388#0#PHP" />
-            <element signature="e#5320#5760#0#PHP" />
-            <element signature="e#6280#6719#0#PHP" />
-            <element signature="e#6739#7682#0#PHP" />
-            <element signature="e#6961#7149#0#PHP" />
-            <element signature="e#8030#8405#0#PHP" />
-            <element signature="e#8095#8389#0#PHP" />
-            <element signature="e#0#654#0" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/find/index.php">
+    <entry file="file://$PROJECT_DIR$/classes/router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="69" column="63" selection-start-line="69" selection-start-column="58" selection-end-line="69" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+          <caret column="8" selection-end-line="3" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/parser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158">
-          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
+        <state relative-caret-position="216">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
           <folding>
             <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Parser#0;n#!!top" />
             <element signature="e#1236#2142#0#PHP" />
@@ -664,10 +633,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/controllers/searchbook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#389#2" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/find.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="n#connect#0;n#!!block;n#index#0;n#Controller_Find#0;n#!!top" />
+            <element signature="e#0#654#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/find/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#form#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_find.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -7,9 +7,7 @@ Class Controller_Find Extends Controller_Base {
 
     // экшен
     function index() {
-
         require_once("core/phpQuery.php");
-        $data = array();
 
         function connect(){
             $host = '127.0.0.1';
@@ -69,9 +67,10 @@ Class Controller_Find Extends Controller_Base {
                 $countAuthor=0;
                 $countGenre=0;
                 $strAuthor = 'WHERE ';
+
                 for ($i = 0; $i <= count($authors); $i++)
                 {
-                    if (!empty($_GET['author_id-' . $i]))
+                    if (!empty($_GET['author_' . $i]))
                     {
                         $countAuthor++;
 
@@ -79,7 +78,7 @@ Class Controller_Find Extends Controller_Base {
                 }
                 for ($i = 0; $i <= count($authors); $i++)
                 {
-                    if (!empty($_GET['genre_id-' . $i]))
+                    if (!empty($_GET['genre_' . $i]))
                     {
                         $countGenre++;
                     }
@@ -89,18 +88,18 @@ Class Controller_Find Extends Controller_Base {
                     $strAuthor .= ' ( ';
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['author_id-' . $i]))
+                        if (!empty($_GET['author_' . $i]))
                         {
-                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_' . $i] . '\' OR';
                         }
                     }
                     $strAuthor = substr($strAuthor, 0, -3);
                     $strAuthor .= ' ) AND ( ';
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['genre_id-' . $i]))
+                        if (!empty($_GET['genre_' . $i]))
                         {
-                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_' . $i] . '\' OR';
                         }
 
                     }
@@ -116,18 +115,18 @@ Class Controller_Find Extends Controller_Base {
                 if ($countAuthor == 1 and $countGenre == 1){
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['author_id-' . $i]))
+                        if (!empty($_GET['author_' . $i]))
                         {
                             $strAuthor .= '(';
-                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\') AND ';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_' . $i] . '\') AND ';
                         }
                     }
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['genre_id-' . $i]))
+                        if (!empty($_GET['genre_' . $i]))
                         {
                             $strAuthor .= '(';
-                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' ) ';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_' . $i] . '\' ) ';
                         }
                     }
                 }
@@ -136,27 +135,27 @@ Class Controller_Find Extends Controller_Base {
                     $strAuthor .= ' ( ';
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['author_id-' . $i]))
+                        if (!empty($_GET['author_' . $i]))
                         {
-                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_' . $i] . '\' OR';
                         }
                     }
                     $strAuthor = substr($strAuthor, 0, -3);
                     $strAuthor .= ' ) AND ( ';
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['genre_id-' . $i]))
+                        if (!empty($_GET['genre_' . $i]))
                         {
-                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' ) ';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_' . $i] . '\' ) ';
                         }
                     }
                 }
                 if ($countAuthor > 1 and $countGenre == 0){
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['author_id-' . $i]))
+                        if (!empty($_GET['author_'. $i]))
                         {
-                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\' OR';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_' . $i] . '\' OR';
                         }
                     }
                     $strAuthor = substr($strAuthor, 0, -3);
@@ -164,9 +163,9 @@ Class Controller_Find Extends Controller_Base {
                 if ($countAuthor == 1 and $countGenre == 0){
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['author_id-' . $i]))
+                        if (!empty($_GET['author_' . $i]))
                         {
-                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\'';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_' . $i] . '\'';
                         }
                     }
                 }
@@ -174,9 +173,9 @@ Class Controller_Find Extends Controller_Base {
                 if ($countAuthor == 0 and $countGenre > 1){
                     for ($i = 0; $i <= count($genres); $i++)
                     {
-                        if (!empty($_GET['genre_id-' . $i]))
+                        if (!empty($_GET['genre_' . $i]))
                         {
-                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_' . $i] . '\' OR';
                         }
                     }
                     $strAuthor = substr($strAuthor, 0, -3);
@@ -185,18 +184,18 @@ Class Controller_Find Extends Controller_Base {
                     $strAuthor .= ' ( ';
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['author_id-' . $i]))
+                        if (!empty($_GET['author_' . $i]))
                         {
-                            $strAuthor .= ' authors.id = \'' . $_GET['author_id-' . $i] . '\'';
+                            $strAuthor .= ' authors.id = \'' . $_GET['author_' . $i] . '\'';
                         }
                     }
 
                     $strAuthor .= ' ) AND ( ';
                     for ($i = 0; $i <= count($authors); $i++)
                     {
-                        if (!empty($_GET['genre_id-' . $i]))
+                        if (!empty($_GET['genre_' . $i]))
                         {
-                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\' OR';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_' . $i] . '\' OR';
                         }
 
                     }
@@ -206,9 +205,9 @@ Class Controller_Find Extends Controller_Base {
                 if ($countAuthor == 0 and $countGenre == 1){
                     for ($i = 0; $i <= count($genres); $i++)
                     {
-                        if (!empty($_GET['genre_id-' . $i]))
+                        if (!empty($_GET['genre_' . $i]))
                         {
-                            $strAuthor .= ' genres.id = \'' . $_GET['genre_id-' . $i] . '\'';
+                            $strAuthor .= ' genres.id = \'' . $_GET['genre_' . $i] . '\'';
                         }
                     }
                 }
@@ -234,6 +233,7 @@ Class Controller_Find Extends Controller_Base {
             $this->template->vars('books1', $books1);
 
         }
+
 
         $this->template->vars('authors', $authors_view);
         $this->template->vars('genres', $genres_view);

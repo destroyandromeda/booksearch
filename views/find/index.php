@@ -1,4 +1,4 @@
- <form class="search ">
+ <form class="search " id="form">
         <div class="row">
             <div class="findByTitleBook col-12 col-md-12">
                 <div class="form-group">
@@ -14,8 +14,8 @@
                         </div>
                         <?php foreach ($genres as $genre):?>
                             <div class="form-check">
-                                <input class="form-check-input" name=<?='genre_id-'.$genre['id']?> type="checkbox" value=<?=$genre['id']?> id=<?='genre_id-'.$genre['id']?> <?php for ($i = 0; $i <= count($genres); $i++) {if(isset($_GET['genre_id-' . $i]) and $_GET['genre_id-' . $i]==$genre['id']){echo 'checked';}} ?>>
-                                <label class="form-check-label" for=<?='genre_id-'.$genre['id']?>>
+                                <input class="form-check-input" name=<?='genre_'.$genre['id']?> type="checkbox" value=<?=$genre['id']?> id=<?=$genre['id']?> <?php for ($i = 0; $i <= count($genres); $i++) {if(isset($_GET['genre_' . $i]) and $_GET['genre_' . $i]==$genre['id']){echo 'checked';}} ?>>
+                                <label class="form-check-label" >
                                     <?=$genre['genre']?>
                                 </label>
                             </div>
@@ -35,10 +35,8 @@
                         </div>
                         <?php foreach ($authors as $author):?>
                             <div class="form-check">
-                                <input class="form-check-input" name=<?='author_id-'.$author['id']?> type="checkbox" value=<?=$author['id']?> id=<?='author_id-'.$author['id']?> <?php for ($i = 0; $i <= count($authors); $i++) {if(isset($_GET['author_id-' . $i]) and $_GET['author_id-' . $i]==$author['id']){echo 'checked';}} ?>>
-                                <label class="form-check-label" for=<?='author_id-'.$author['id']?>>
-                                    <?=$author['full_name']?>
-                                </label>
+                                <input class="form-check-input" name=<?='author_'.$author['id']?> type="checkbox" value=<?=$author['id']?> id="checkbox" <?php for ($i = 0; $i <= count($authors); $i++) {if(isset($_GET['author_' . $i]) and $_GET['author_' . $i]==$author['id']){echo 'checked';}} ?>>
+                                <label class="form-check-label"><?=$author['full_name']?></label>
                             </div>
                         <?php endforeach?>
                     </div>
@@ -47,22 +45,23 @@
         </div>
  </form>
 
- <script>
+<!-- <script>
+     $('#checkbox').click(function(){
+         if ($(this).is(':checked')){
+             $.ajax({
+                 url: '/mvc/controllers/find.php',
+                 method: 'get',
+                 dataType: 'html',
+                 data: $('#form'),
+                 success: function(data){
+                     $('#allbooks').html(data);
+                     alert(data);
+                 }
+             });
+         }
+     });
 
-     document.ready(function () {
-
-         $.ajax({
-
-             type: "GET",
-             data: {
-                 book_title:  $('.ajax_q').val(),
-
-             }
-
-
-         })
-     })
- </script>
+ </script>-->
 
  <div class="allbooks">
      <div class="row">

@@ -5,9 +5,9 @@ Class Router {
 
 	private $path;
 	private $args = array();
-	
+
 	function __construct() {
-	
+
 	}
 
 	// задаем путь до папки с контроллерами
@@ -19,16 +19,16 @@ Class Router {
 			throw new Exception ('Invalid controller path: `' . $path . '`');
         }
         $this->path = $path;
-	}	
-	
+	}
+
 	// определение контроллера и экшена из урла
 	private function getController(&$file, &$controller, &$action, &$args) {
         $route = (empty($_GET['route'])) ? '' : $_GET['route'];
 		unset($_GET['route']);
         if (empty($route)) {
-			$route = 'index'; 
+			$route = 'index';
 		}
-		
+
         // Получаем части урла
         $route = trim($route, '/\\');
         $parts = explode('/', $route);
@@ -52,39 +52,39 @@ Class Router {
         }
 		// если урле не указан контролер, то испольлзуем поумолчанию index
         if (empty($controller)) {
-			$controller = 'index'; 
+			$controller = 'index';
 		}
 
         // Получаем экшен
         $action = array_shift($parts);
-        if (empty($action)) { 
-			$action = 'index'; 
+        if (empty($action)) {
+			$action = 'index';
 		}
 
         $file = $cmd_path . $controller . '.php';
         $args = $parts;
 	}
-	
+
 	function start() {
         // Анализируем путь
         $this->getController($file, $controller, $action, $args);
-		
+
         // Проверка существования файла, иначе 404
         if (is_readable($file) == false) {
 
 			die ('Файл не существует 404 Not Found');
         }
-		
+
         // Подключаем файл
         include ($file);
 
         // Создаём экземпляр контроллера
         $class = 'Controller_' . $controller;
         $controller = new $class();
-		
+
         // Если экшен не существует - 404
         if (is_callable(array($controller, $action)) == false) {
-            print_r($controller);
+            //print_r($controller);
             echo '<br>';
             echo $action;
             echo '<br>';
@@ -93,6 +93,5 @@ Class Router {
 
         // Выполняем экшен
         $controller->$action();
-
 	}
 }
