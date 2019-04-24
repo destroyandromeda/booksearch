@@ -10,7 +10,7 @@ Class Controller_Parser Extends Controller_Base {
 
         require_once("core/phpQuery.php");
         $data = array();
-
+        ini_set('max_execution_time', 900);
         function connect(){
             $host = '127.0.0.1';
             $db   = 'job';
@@ -37,9 +37,26 @@ Class Controller_Parser Extends Controller_Base {
         if(isset($_GET['parse']))
         {
             delTables();
-            //парсинг по страницам, $i - номерс страницы
-            for ($i = 1; $i <= 2; $i++){
-                $html = file_get_contents("https://www.litmir.me/bs?p=".$i);
+            //парсинг по страницам, $i - номерс страницы,6 и более очень долго
+            for ($i = 1; $i <= 10; $i++){
+                // 1. инициализация
+                $ch = curl_init();
+                $uagent = "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.14";
+                // 2. устанавливаем опции, включая урл
+                curl_setopt($ch, CURLOPT_URL, "https://www.litmir.me/bs?p=".$i);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_USERAGENT, $uagent);  // useragent
+                curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120); // таймаут соединения
+                curl_setopt($ch, CURLOPT_TIMEOUT, 120);        // таймаут ответа
+                curl_setopt($ch, CURLOPT_MAXREDIRS, 10);
+
+                // 3. выполнение запроса и получение ответа
+                $html = curl_exec($ch);
+
+
+
+                //$html = file_get_contents("https://www.litmir.me/bs?p=".$i);
                 phpQuery::newDocument($html);
                 $books = pq("div[jq=\"BookList\"]")->find(".island");
                 foreach($books as $book){
@@ -134,6 +151,9 @@ Class Controller_Parser Extends Controller_Base {
             }
             //отправка данных
             $this->template->vars('data', $data);
+
+            // 4. очистка ресурсов
+            curl_close($ch);
         }
         $this->template->view('index');
 

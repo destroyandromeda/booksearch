@@ -106,7 +106,6 @@ Class Controller_Find Extends Controller_Base {
                     $strAuthor = substr($strAuthor, 0, -3);
                     $strAuthor .= ')';
                 }
-
                 if($countAuthor == 0 and $countGenre == 0)
                 {
 
