@@ -1,5 +1,6 @@
-.spoiler-wrap{background:#fff;margin: 0 0 8px;border:1px solid #efefef}
-.spoiler-head{background:#efefef;cursor:pointer;}
+.spoiler-wrap{background:#fff;margin: 0 0 8px;border:1px solid #6fdeef
+}
+.spoiler-head{background: #67dfef;cursor:pointer; text-align: center}
 .spoiler-body{padding:5px}
 .spoiler-wrap.disabled .spoiler-body{display:none}
 .spoiler-wrap.active{border-color:#57AA43}
@@ -42,10 +43,7 @@
 
 }
 .card-body{
-	padding-left: 0;
-	padding-right: 0;
-
-
+	padding:0 !important;
 }
 
 

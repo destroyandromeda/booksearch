@@ -44,25 +44,6 @@
             </div>
         </div>
  </form>
-
-<!-- <script>
-     $('#checkbox').click(function(){
-         if ($(this).is(':checked')){
-             $.ajax({
-                 url: '/mvc/controllers/find.php',
-                 method: 'get',
-                 dataType: 'html',
-                 data: $('#form'),
-                 success: function(data){
-                     $('#allbooks').html(data);
-                     alert(data);
-                 }
-             });
-         }
-     });
-
- </script>-->
-
  <div class="allbooks">
      <div class="row">
          <?php if(!empty($books1)):?>
