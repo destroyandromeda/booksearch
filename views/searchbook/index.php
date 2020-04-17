@@ -7,7 +7,7 @@
             <div class="row" >
 
                 <div class="col-12 col-md-2">
-                    <img class="book-cover" src="https://www.litmir.me<?=$book['cover']?>">
+                    <img class="book-cover" src="https://www.litmir.me/<?=$book['cover']?>">
                 </div>
 
                 <div class="col-12 col-md-10">

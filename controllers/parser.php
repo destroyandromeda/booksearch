@@ -1,17 +1,20 @@
 <?php
 // контролер
-Class Controller_Parser Extends Controller_Base {
+class Controller_Parser extends Controller_Base
+{
 
     // шаблон
     public $layouts = "first_layouts";
 
     // экшен
-    function index() {
+    function index()
+    {
 
         require_once("core/phpQuery.php");
         $data = array();
         ini_set('max_execution_time', 900);
-        function connect(){
+        function connect()
+        {
             $host = '127.0.0.1';
             $db   = 'job';
             $user = 'root';
@@ -26,7 +29,8 @@ Class Controller_Parser Extends Controller_Base {
             return $pdo = new PDO($dsn, $user, $pass, $opt);
         }
         //чистим таблицы
-        function delTables(){
+        function delTables()
+        {
             connect()->exec("DELETE FROM books");
             connect()->exec("DELETE FROM authors");
             connect()->exec("DELETE FROM genres");
@@ -34,21 +38,20 @@ Class Controller_Parser Extends Controller_Base {
             connect()->exec("DELETE FROM book_author");
         }
 
-        if(isset($_GET['parse']))
-        {
-            if(isset($_GET['pages'])){
+        if (isset($_GET['parse'])) {
+            if (isset($_GET['pages'])) {
                 $pages = $_GET['pages'];
-            }else{
+            } else {
                 $pages = 1;
             }
             delTables();
             //парсинг по страницам, $i - номерс страницы,6 и более очень долго
-            for ($i = 1; $i <= $pages; $i++){
+            for ($i = 1; $i <= $pages; $i++) {
                 // 1. инициализация
                 $ch = curl_init();
-                $uagent = "Opera/9.80 (Windows NT 6.1; WOW64) Presto/2.12.388 Version/12.14";
+                $uagent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36";
                 // 2. устанавливаем опции, включая урл
-                curl_setopt($ch, CURLOPT_URL, "https://www.litmir.me/bs?p=".$i);
+                curl_setopt($ch, CURLOPT_URL, "https://www.litmir.me/bs?p=" . $i);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_USERAGENT, $uagent);  // useragent
@@ -64,28 +67,30 @@ Class Controller_Parser Extends Controller_Base {
                 //$html = file_get_contents("https://www.litmir.me/bs?p=".$i);
                 phpQuery::newDocument($html);
                 $books = pq("div[jq=\"BookList\"]")->find(".island");
-                foreach($books as $book){
+                foreach ($books as $book) {
                     $book = pq($book);
                     $data[] = array(
                         "name" => $book->find('.book_name span')->text(),
-                        "authors" => $book ->find('span[itemprop=\'author\']')->text(),
-                        "genres" => $book ->find('span[itemprop=\'genre\']')->text(),
-                        "description" => $book ->find('div[itemprop="description"]')->text(),
-                        "image" => $book->find('img[jq="BookCover"]')->attr("data-src"),
+                        "authors" => $book->find('span[itemprop=\'author\']')->text(),
+                        "genres" => $book->find('span[itemprop=\'genre\']')->text(),
+                        "description" => $book->find('div[itemprop="description"]')->text(),
+                        "image" => $book->find('td.lt22 > a > img')->attr("data-src"),
                         "alt" => $book->find('img[jq="BookCover"]')->attr("alt")
                     );
                 }
             }
             //убираем лишние символы
             for ($i = 0; $i < count($data); $i++) {
-                $data[$i]['genres'] = str_replace('...','',explode(',', $data[$i]['genres']));
-                $data[$i]['authors'] = str_replace('...','',explode(',', $data[$i]['authors']));
+                $data[$i]['genres'] = str_replace('...', '', explode(',', $data[$i]['genres']));
+                $data[$i]['authors'] = str_replace('...', '', explode(',', $data[$i]['authors']));
             }
+
             //собираем данные в структурироввнный массив - актуально для жанров и авторов
-            function normal($title,$data){
+            function normal($title, $data)
+            {
                 $array = array();
-                foreach ($data as $da){
-                    foreach ($da[$title] as $a){
+                foreach ($data as $da) {
+                    foreach ($da[$title] as $a) {
                         $array[] = $a;
                     }
                 }
@@ -97,39 +102,40 @@ Class Controller_Parser Extends Controller_Base {
             for ($i = 1; $i <= count($data); $i++) {
                 $book = new Model_Books();
                 $book->id = $i;
-                $book->name = $data[$i-1]['name'];
-                $book->description =  $data[$i-1]['description'];
-                if(!empty($data[$i-1]['image'])){
-                    $img = 'https://www.litmir.me'.$data[$i-1]['image'];
-                }
-                else{
+                $book->name = $data[$i - 1]['name'];
+                $book->description =  $data[$i - 1]['description'];
+                print_r($data[$i - 1]);
+                if (!empty($data[$i - 1]['image'])) {
+                    $img = 'https://www.litmir.me' . $data[$i - 1]['image'];
+                } else {
                     $img = 'https://ovendom.ru/feedback/images/t_1492424766.jpg';
                 }
-                $book->cover =  $img;
+                $book->cover = $img;
+                print_r($book);
+
                 $book->save();
             }
             //сохраняем жанры
-            $gen = normal('genres',$data);
+            $gen = normal('genres', $data);
             for ($i = 1; $i <= count($gen); $i++) {
                 $genre = new Model_Genres();
                 $genre->id = $i;
-                $genre->genre = $gen[$i-1];
+                $genre->genre = $gen[$i - 1];
                 $genre->save();
             }
             //сохраняем авторов
-            $auth = normal('authors',$data);
+            $auth = normal('authors', $data);
             for ($i = 1; $i <= count($auth); $i++) {
                 $authors = new Model_Authors();
                 $authors->id = $i;
-                $authors->full_name = $auth[$i-1];
+                $authors->full_name = $auth[$i - 1];
                 $authors->save();
             }
             //таблица book_author
             for ($i = 1; $i <= count($data); $i++) {
                 $book_author = new Model_Book_Author();
-                $a = $book_author->book = $data[$i-1]['name'];
-                foreach ($data[$i-1]['authors'] as $value)
-                {
+                $a = $book_author->book = $data[$i - 1]['name'];
+                foreach ($data[$i - 1]['authors'] as $value) {
                     $select_from_authors = 'SELECT * FROM authors WHERE full_name = \'' . $value . '\''; //sql запрос к бд
                     $model = new Model_Authors($select_from_authors); // создаем объект модели
                     $auth = $model->getOneRow(); // получаем все строки
@@ -137,17 +143,15 @@ Class Controller_Parser Extends Controller_Base {
                     $b = $book_author->author = $auth['id'];
                     $sql = "INSERT INTO book_author (id, book, author) VALUES (NULL,'$a','$b')";
                     $ept = connect()->prepare($sql);
-                    $ept ->execute();
+                    $ept->execute();
                     $book_author->save();
                 }
             }
             //таблица book_genre
-            for ($i = 1; $i <= count($data); $i++)
-            {
+            for ($i = 1; $i <= count($data); $i++) {
                 $book_genre = new Model_Book_Genre();
-                $a = $book_genre->book = $data[$i-1]['name'];
-                foreach ($data[$i-1]['genres'] as $value)
-                {
+                $a = $book_genre->book = $data[$i - 1]['name'];
+                foreach ($data[$i - 1]['genres'] as $value) {
 
                     $select_from_genres = 'SELECT * FROM genres WHERE genre = \'' . $value . '\''; //sql запрос к бд
                     $model = new Model_Genres($select_from_genres); // создаем объект модели
@@ -156,7 +160,7 @@ Class Controller_Parser Extends Controller_Base {
                     $b =  $book_genre->genres = $gee['id'];
                     $sql = "INSERT INTO book_genre (id, book, genres) VALUES (NULL,'$a','$b')";
                     $ept = connect()->prepare($sql);
-                    $ept ->execute();
+                    $ept->execute();
                     $book_genre->save();
                 }
             }
@@ -167,8 +171,5 @@ Class Controller_Parser Extends Controller_Base {
             curl_close($ch);
         }
         $this->template->view('index');
-
-
     }
-
 }

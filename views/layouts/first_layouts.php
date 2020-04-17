@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="/mvc/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/booksearch/css/main.css" />
     <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <head>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/mvc">Главная <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/booksearch">Главная <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mvc/find">Поиск</a>
+                    <a class="nav-link" href="/booksearch/find">Поиск</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mvc/parser">Парсинг книг в базу данных</a>
+                    <a class="nav-link" href="/booksearch/parser">Парсинг книг в базу данных</a>
                 </li>
             </ul>
         </div>

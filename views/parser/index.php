@@ -15,5 +15,5 @@
 <br>
 <div class="col-12" style="text-align: center">
     <h4>Не обновлять</h4>
-    <a type="sumbit" href="/mvc/find" class="btn btn-primary" >Вернуться к поиску</a>
+    <a type="sumbit" href="/booksearch/find" class="btn btn-primary" >Вернуться к поиску</a>
 </div>
